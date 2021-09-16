@@ -12,34 +12,43 @@ public class BlockMove : MonoBehaviour
     //------------------------------
 
     //Blockの移動速度
-    float blockMoveSpeed;
+    public float blockMoveSpeed;
     //Block逆再生用
 
     //BlockのX軸Position
     float blockXPosition;
+    //Blockの収納変数
+    GameObject block;
+
+    Rigidbody rb;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        blockMoveSpeed = 0.5f;
+        blockMoveSpeed = 0.01f;
         blockXPosition = 0;
+        //block = blockObject.GetComponent<GameObject>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     //Blockの逆再生時に止まるようにFixed変更
-    void FixedUpdate()
+    void Update()
     {
-        BlockXMove();
-        Debug.Log("Fixed確認");
+        //BlockXMove();
+        transform.Translate(blockMoveSpeed, 0, 0);
     }
 
-    //Block移動用メソッド
+    /// <summary>
+    ///Block移動用メソッド
+    /// </summary>
     void BlockXMove()
     {
         //Block移動処理
-        blockXPosition = blockObject.transform.position.x;
-        blockXPosition += blockMoveSpeed;
+        rb.velocity = new Vector3(blockMoveSpeed, 0, 0);
+        //blockXPosition = blockObject.transform.position.x;
+        //blockXPosition += blockMoveSpeed;
 
     }
 }
