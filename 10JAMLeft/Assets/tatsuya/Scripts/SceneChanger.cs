@@ -1,18 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string nextSceneName;
+
+    private string currentSceneName;
+    private bool isChangeScene = false;
+
+    public bool IsChangeScene
     {
-        
+        get => isChangeScene;
+        set => isChangeScene = value;
     }
 
-    // Update is called once per frame
-    void Update()
+    public string NextSceneName
     {
-        
+        get => nextSceneName;
+        set => nextSceneName = value;
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void ChangeScene(string nextScene)
+    {
+        SceneManager.LoadScene(nextScene);
+    }
+
+    public void ButtonChangScene(string nextScene)
+    {
+        ChangeScene(nextScene);
+    }
+
+    public void CurrentChangeScene()
+    {
+        currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }
