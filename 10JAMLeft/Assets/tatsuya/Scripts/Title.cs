@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Title : MonoBehaviour
 {
-    private SceneChange change;
+    private SceneChanger change;
     // Start is called before the first frame update
     void Start()
     {
-        change = GetCompornent<SceneChanger>();        
+        change = GetComponent<SceneChanger>();        
     }
 
     // Update is called once per frame
