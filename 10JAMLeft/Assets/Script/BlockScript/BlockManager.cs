@@ -15,7 +15,7 @@ public class BlockManager : MonoBehaviour
     float randomYPosition;
     int CreateSpeed;
     BlockMove blockMove;
-
+    BlockMove[] blockMoves;
     float blockSpeed;
 
     //BlockópîzóÒ
@@ -27,7 +27,9 @@ public class BlockManager : MonoBehaviour
         CreateSpeed = 0;
         blockSpeed = -0.01f;
         blockMove = blockObject.GetComponent<BlockMove>();
+        //blockMove = transform.GetComponentInChildren<BlockMove>();
         blocks = new GameObject[20];
+        blockMoves = new BlockMove[20];
         //for (int i = 0; i < transform.parent.childCount; i++)
         //{
         //    blocks[i] = this.transform.GetChild(i).gameObject;            
@@ -48,40 +50,38 @@ public class BlockManager : MonoBehaviour
 
         Debug.Log(transform.childCount);
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            blocks[i] = this.transform.GetChild(i).gameObject;
-            blockMove = blocks[i].GetComponent<BlockMove>();
-        }
 
-    //    foreach (var blo in blocks)
-    //    {
-    //        blockMove = transform.GetComponentInChildren<BlockMove>();
-    //    }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //foreach (var blo in blocks)
-        //{
-        //                
+        if (transform.childCount != 0)
+        {
+            blockMove = transform.GetComponentInChildren<BlockMove>();
 
-        //}
+        }
 
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            blocks[i] = this.transform.GetChild(i).gameObject;
+            //blockMoves[i] = blocks[i].GetComponentInChildren<BlockMove>();
+
+        }
 
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Ç®Ç≥ÇÍÇƒÇÈÅ`");
-            GoRight();
+            Time.timeScale = 0;
+            blockMove.SpeedChange();
         }
         else
         {
             Time.timeScale = 1;
-            blockMove.blockMoveSpeed = 0.01f;
+            blockMove.SpeedBack();
+            //blockMove.blockMoveSpeed = 0.01f;
         }
-
-
 
     }
 
@@ -93,7 +93,7 @@ public class BlockManager : MonoBehaviour
         randomYPosition = (float)Random.Range(-4.0f, 4.0f);
 
         var parent = this.transform;
-        Instantiate(blockObject, new Vector3(-4, randomYPosition, 0), Quaternion.identity,parent);
+        Instantiate(blockObject, new Vector3(-4, randomYPosition, 0), Quaternion.identity, parent);
         //blockObject.transform.parent = transform.parent;
     }
 
