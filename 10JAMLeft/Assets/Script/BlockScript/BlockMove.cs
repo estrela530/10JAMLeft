@@ -36,6 +36,10 @@ public class BlockMove : MonoBehaviour
     //Block‚Ì‹tÄ¶‚É~‚Ü‚é‚æ‚¤‚ÉFixed•ÏX
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         //BlockXMove();
         transform.Translate(blockMoveSpeed, 0, 0);
     }

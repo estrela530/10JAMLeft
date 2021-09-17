@@ -15,11 +15,11 @@ public class BlockManager : MonoBehaviour
     float randomYPosition;
     int CreateSpeed;
     BlockMove blockMove;
-    BlockMove[] blockMoves;
     float blockSpeed;
 
     //Block用配列
     GameObject[] blocks;
+    BlockMove[] blockMoves;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +30,10 @@ public class BlockManager : MonoBehaviour
         //blockMove = transform.GetComponentInChildren<BlockMove>();
         blocks = new GameObject[20];
         blockMoves = new BlockMove[20];
-        //for (int i = 0; i < transform.parent.childCount; i++)
+        //for (int i = 0; i < transform.childCount; i++)
         //{
         //    blocks[i] = this.transform.GetChild(i).gameObject;            
         //}
-
     }
 
     // Update is called once per frame
@@ -49,25 +48,26 @@ public class BlockManager : MonoBehaviour
         }
 
         Debug.Log(transform.childCount);
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if (Mathf.Approximately(Time.timeScale, 0f))
+        //{
+        //    return;
+        //}
+
         if (transform.childCount != 0)
         {
             blockMove = transform.GetComponentInChildren<BlockMove>();
-
         }
 
         for (int i = 0; i < transform.childCount; i++)
         {
             blocks[i] = this.transform.GetChild(i).gameObject;
+            //↓「配列の一番最後に（末端に入ってるやつのみ動く）」
             //blockMoves[i] = blocks[i].GetComponentInChildren<BlockMove>();
-
         }
 
         if (Input.GetKey(KeyCode.Space))
