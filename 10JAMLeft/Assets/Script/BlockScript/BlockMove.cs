@@ -51,4 +51,28 @@ public class BlockMove : MonoBehaviour
         //blockXPosition += blockMoveSpeed;
 
     }
+
+    /// <summary>
+    /// blockMoveSpeed取得用メソッド
+    /// </summary>
+    public float GetSpeed
+    {
+        get { return blockMoveSpeed; }
+
+        //set { blockMoveSpeed = value; }
+    }
+
+    /// <summary>
+    /// 巻き戻し時のBlock動作
+    /// </summary>
+    public void SpeedChange()
+    {
+        blockMoveSpeed = -0.01f;
+    }
+
+    public void SpeedBack()
+    {
+        blockMoveSpeed = 0.01f;
+    }
+
 }
