@@ -16,10 +16,13 @@ public class BlockManager : MonoBehaviour
     int CreateSpeed;
     BlockMove blockMove;
     float blockSpeed;
+    //今が時間停止の効果が出ているときかを判断する
+    public bool isTimeStopFlag;
 
     //Block用配列
     GameObject[] blocks;
     BlockMove[] blockMoves;
+    List<GameObject> blocksObjlist = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,8 @@ public class BlockManager : MonoBehaviour
         //blockMove = transform.GetComponentInChildren<BlockMove>();
         blocks = new GameObject[20];
         blockMoves = new BlockMove[20];
+        isTimeStopFlag = false;
+
         //for (int i = 0; i < transform.childCount; i++)
         //{
         //    blocks[i] = this.transform.GetChild(i).gameObject;            
@@ -46,8 +51,6 @@ public class BlockManager : MonoBehaviour
             CreateBlock();
             CreateSpeed = 0;
         }
-
-        Debug.Log(transform.childCount);
     }
 
     // Update is called once per frame
@@ -58,28 +61,44 @@ public class BlockManager : MonoBehaviour
         //    return;
         //}
 
-        if (transform.childCount != 0)
-        {
-            blockMove = transform.GetComponentInChildren<BlockMove>();
-        }
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    blocks[i] = this.transform.GetChild(i).gameObject;
+        //}
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            blocks[i] = this.transform.GetChild(i).gameObject;
-            //↓「配列の一番最後に（末端に入ってるやつのみ動く）」
-            //blockMoves[i] = blocks[i].GetComponentInChildren<BlockMove>();
-        }
-
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && isTimeStopFlag == false)
         {
             Debug.Log("おされてる～");
+            isTimeStopFlag = true;
+            Transform children = transform.GetComponentInChildren<Transform>();
+            //子供オブジェクトlistに格納
+            foreach (Transform blo in children)
+            {
+                blocksObjlist.Add(blo.gameObject);
+            }
+            //blocksObjlistの中身のSpeedChange()を全実行
+            foreach (var list in blocksObjlist)
+            {
+                list.GetComponent<BlockMove>().SpeedChange();
+            }
             Time.timeScale = 0;
-            blockMove.SpeedChange();
+            //blockMove.SpeedChange();
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             Time.timeScale = 1;
-            blockMove.SpeedBack();
+            //blocksObjlistの中身のSpeedBack()を全実行
+            foreach (var list in blocksObjlist)
+            {
+                list.GetComponent<BlockMove>().SpeedBack();
+            }
+
+            //blocksObjlistの中身全削除
+            blocksObjlist.Clear();
+
+            isTimeStopFlag = false;
+
+            //blockMove.SpeedBack();
             //blockMove.blockMoveSpeed = 0.01f;
         }
 
