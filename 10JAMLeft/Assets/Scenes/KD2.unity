@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 1336105605}
   - component: {fileID: 1336105604}
   - component: {fileID: 1336105608}
+  - component: {fileID: 1336105609}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -476,6 +477,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b92c874d28e1b47b80afc07285c5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClickNow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1336105609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336105603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc124825df8a1a4a9e0e305d6c80dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockObject: {fileID: 1336105603}
+  blockMoveSpeed: 1
 --- !u!1 &1671109824
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +510,7 @@ GameObject:
   - component: {fileID: 1671109826}
   - component: {fileID: 1671109825}
   - component: {fileID: 1671109829}
+  - component: {fileID: 1671109830}
   m_Layer: 0
   m_Name: Block(2)
   m_TagString: Block
@@ -584,6 +606,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b92c874d28e1b47b80afc07285c5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClickNow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1671109830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671109824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc124825df8a1a4a9e0e305d6c80dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockObject: {fileID: 0}
+  blockMoveSpeed: 0
 --- !u!1 &1864163225
 GameObject:
   m_ObjectHideFlags: 0

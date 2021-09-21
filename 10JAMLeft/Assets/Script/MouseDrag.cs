@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class MouseDrag : MonoBehaviour
 {
     Vector3 objectPoint;    //ブロックのポジション変換用
     Vector3 screenPoint;    //ブロックのスクリーンポジション
 
-    bool clickedObject;     //クリックされたところにブロックがあるか
+    public bool clickedObject { get; set; }     //クリックされたところにブロックがあるか
 
     Vector3 currentMousePos;    //マウスポジション格納用(前フレーム)
     Vector3 previousMousePos;   //マウスポジション格納用(現在フレーム)
 
     GameObject clickGameObject; //クリックしたオブジェクトを取得
+
+    public UnityEvent OnClickNow;
+
+    public UnityEvent OnClickExit;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,15 +42,15 @@ public class MouseDrag : MonoBehaviour
         //クリック時処理
         if (Input.GetMouseButtonDown(0))
         {
-            //クリックした先にレイを飛ばす
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit = new RaycastHit();
 
             //ブロックがある場合
-            if(Physics.Raycast(ray,out hit))
+            if (Physics.Raycast(ray, out hit))
             {
                 clickGameObject = hit.collider.gameObject;
                 clickedObject = true;
+                OnClickNow.Invoke();
             }
         }
 
@@ -51,9 +58,10 @@ public class MouseDrag : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             clickedObject = false;
+            OnClickExit.Invoke();
         }
 
-        if (clickedObject&&this.gameObject.name == clickGameObject.name)
+        if (clickedObject && this.gameObject.name == clickGameObject.name)
         {
 
             //Blockの座標をワールドからスクリーンに
@@ -67,10 +75,10 @@ public class MouseDrag : MonoBehaviour
 
             //Blockの座標をスクリーンからワールドに
             objectPoint = Camera.main.ScreenToWorldPoint(screenPoint);
+            //ブロックのポジションに変化を割り当て
+            transform.position = objectPoint;
 
         }
-        //ブロックのポジションに変化を割り当て
-        transform.position = objectPoint;
 
         //前のフレームのマウスポジション格納
         previousMousePos = Input.mousePosition;
