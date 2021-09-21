@@ -80,8 +80,8 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         bgmAudioSource = gameObject.AddComponent<AudioSource>();
         seAudioSource = gameObject.AddComponent<AudioSource>();
 
-        bgm = Resources.LoadAll<AudioClip>("Audio/BGM");
-        se = Resources.LoadAll<AudioClip>("Audio/SE");
+        bgm = Resources.LoadAll<AudioClip>("Sound/BGM");
+        se = Resources.LoadAll<AudioClip>("Sound/SE");
 
         for (int i = 0; i < bgm.Length; i++)
         {

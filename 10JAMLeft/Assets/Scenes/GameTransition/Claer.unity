@@ -196,6 +196,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2707917875036021161, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
+      propertyPath: playBGM
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4678117084296054131, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
       propertyPath: m_Name
       value: BGMPlayer

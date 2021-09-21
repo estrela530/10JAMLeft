@@ -123,6 +123,131 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &303629296
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 571109712682604782, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714011502751, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714093000512, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714161132445, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714250418286, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703344, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703349, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_Name
+      value: Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714461703349, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571109714490348876, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f01d0d11f52ba824ba99379f370a75d1, type: 3}
 --- !u!1 &910133485
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +461,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2707917875036021161, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
+      propertyPath: playBGM
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4678117084296054131, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
       propertyPath: m_Name
       value: BGMPlayer
