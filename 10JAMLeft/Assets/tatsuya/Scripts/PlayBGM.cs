@@ -18,6 +18,7 @@ public class PlayBGM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("çƒê∂íÜ");
         SoundManager.Instance.PlayBgmByName(playBGM);
     }
 }
