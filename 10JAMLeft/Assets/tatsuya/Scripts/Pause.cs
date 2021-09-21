@@ -16,17 +16,20 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isPause)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            TrueActive();
-            Time.timeScale = 0.0f;
-            isPause = true;
-        }
-        else
-        {
-            FalseActive();
-            Time.timeScale = 1.0f;
-            isPause = false;
+            if (!isPause)
+            {
+                TrueActive();
+                Time.timeScale = 0.0f;
+                isPause = true;
+            }
+            else
+            {
+                FalseActive();
+                Time.timeScale = 1.0f;
+                isPause = false;
+            }
         }
     }
 
