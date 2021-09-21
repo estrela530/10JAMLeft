@@ -127,11 +127,14 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         index = Mathf.Clamp(index, 0, bgm.Length);
 
-        isPlayBGM = true;
         bgmAudioSource.clip = bgm[index];
         bgmAudioSource.loop = true;
         bgmAudioSource.volume = BgmVolume * Volume;
-        bgmAudioSource.Play();
+        if (isPlayBGM == false)
+        {
+            bgmAudioSource.Play();
+        }
+        isPlayBGM = true;
     }
 
     public void PlayBgmByName(string name)
