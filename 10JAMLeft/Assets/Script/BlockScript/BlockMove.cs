@@ -22,6 +22,7 @@ public class BlockMove : MonoBehaviour
 
     Rigidbody rb;
 
+    public bool onClick { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class BlockMove : MonoBehaviour
         //    return;
         //}
         //BlockXMove();
+        if(!onClick)
         transform.Translate(blockMoveSpeed, 0, 0);
     }
 
