@@ -8,8 +8,11 @@ public class MouseDrag : MonoBehaviour
     Vector3 screenPoint;    //ブロックのスクリーンポジション
 
     bool clickedObject;     //クリックされたところにブロックがあるか
-    Vector3 justMousePosition;
-    Vector3 mousePosition;
+
+    Vector3 currentMousePos;    //マウスポジション格納用(前フレーム)
+    Vector3 previousMousePos;   //マウスポジション格納用(現在フレーム)
+
+    GameObject clickGameObject; //クリックしたオブジェクトを取得
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +24,25 @@ public class MouseDrag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if(Mathf.Approximately(Time.timeScale,0f))
+        //{
+        //    return;
+        //}
+
+        //現在のフレームのマウスポジション格納
+        currentMousePos = Input.mousePosition;
+
         //クリック時処理
         if (Input.GetMouseButtonDown(0))
         {
+            //クリックした先にレイを飛ばす
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit = new RaycastHit();
 
             //ブロックがある場合
             if(Physics.Raycast(ray,out hit))
             {
+                clickGameObject = hit.collider.gameObject;
                 clickedObject = true;
             }
         }
@@ -40,19 +53,16 @@ public class MouseDrag : MonoBehaviour
             clickedObject = false;
         }
 
-        if (clickedObject)
+        if (clickedObject&&this.gameObject.name == clickGameObject.name)
         {
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            mousePosition = new Vector3(mousePosition.x, mousePosition.y, 0);
 
             //Blockの座標をワールドからスクリーンに
-            objectPoint = Camera.main.WorldToScreenPoint(mousePosition - transform.position);
+            objectPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-            //Blockのポジションをマウスの位置に
+            //Blockのポジションをマウスのベクトル分移動する
             screenPoint = new Vector3(
-                Input.mousePosition.x,
-                Input.mousePosition.y,
+                (objectPoint + (currentMousePos - previousMousePos)).x,
+                (objectPoint + (currentMousePos - previousMousePos)).y,
                 objectPoint.z);
 
             //Blockの座標をスクリーンからワールドに
@@ -62,5 +72,7 @@ public class MouseDrag : MonoBehaviour
         //ブロックのポジションに変化を割り当て
         transform.position = objectPoint;
 
+        //前のフレームのマウスポジション格納
+        previousMousePos = Input.mousePosition;
     }
 }

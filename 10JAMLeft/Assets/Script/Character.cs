@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public bool isGround; //地面かどうか
-    bool isJump;    //ジャンプできるか
+    public bool isGround { get; set; } //地面かどうか
+    public bool isJump;    //ジャンプできるか
     public float force; //力
     public float vecY;  //↑ベクトル
-    public bool isRotation = false; //移動してる風用の回転
-    float rotateScale;
     Rigidbody rb;
     bool isDead;    //死か
 
-    //ジャンプの仕方（見分け用
+    public float time = 0;  //入力されてからの経過時間保存用time
+    float precedeTime = 0.2f;   //先行入力待機時間
+
+    //ジャンプの仕方（見分け用 今のところほぼ変化なし
     public bool switchJamp;
     // Start is called before the first frame update
     void Start()
     {
         isGround = false;
-        rotateScale = 1;
         rb = GetComponent<Rigidbody>();
         isDead = false;
 
@@ -28,11 +28,22 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        if (isGround)
+        //if(Mathf.Approximately(Time.timeScale,0f))
+        //{
+        //    return;
+        //}
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            isJump = true;
+        }
+        if (isJump)
+        {
+            time += Time.deltaTime;
+            if (time > precedeTime)
             {
-                isJump = true;
+                isJump = false;
+                time = 0;
             }
         }
 
@@ -53,22 +64,18 @@ public class Character : MonoBehaviour
     {
         if (isJump)
         {
-            isJump = false;
-            isGround = false;
-            Jump();
+            if (isGround)
+            {
+                isJump = false;
+                isGround = false;
+                time = 0;
+                Jump();
+            }
         }
-
-        if (isRotation)
-            transform.Rotate(new Vector3(0, 0, rotateScale));
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Block")
-        {
-            isGround = true;
-        }
-
         if (other.gameObject.tag == "Trap")
         {
             isDead = true;
