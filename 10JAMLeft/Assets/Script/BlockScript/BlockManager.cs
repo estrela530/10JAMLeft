@@ -56,33 +56,38 @@ public class BlockManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Mathf.Approximately(Time.timeScale, 0f))
-        //{
-        //    return;
-        //}
+        if (Mathf.Approximately(Time.timeScale, 0f) && isTimeStopFlag == false)
+        {
+            return;
+        }
 
         //for (int i = 0; i < transform.childCount; i++)
         //{
         //    blocks[i] = this.transform.GetChild(i).gameObject;
         //}
 
-        if (Input.GetKey(KeyCode.Space) && isTimeStopFlag == false)
+        if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("おされてる～");
             isTimeStopFlag = true;
-            Transform children = transform.GetComponentInChildren<Transform>();
-            //子供オブジェクトlistに格納
-            foreach (Transform blo in children)
+
+            if (isTimeStopFlag == true)
             {
-                blocksObjlist.Add(blo.gameObject);
+                Debug.Log("おされてる～");
+
+                Transform children = transform.GetComponentInChildren<Transform>();
+                //子供オブジェクトlistに格納
+                foreach (Transform blo in children)
+                {
+                    blocksObjlist.Add(blo.gameObject);
+                }
+                //blocksObjlistの中身のSpeedChange()を全実行
+                foreach (var list in blocksObjlist)
+                {
+                    list.GetComponent<BlockMove>().SpeedChange();
+                }
+                Time.timeScale = 0;
             }
-            //blocksObjlistの中身のSpeedChange()を全実行
-            foreach (var list in blocksObjlist)
-            {
-                list.GetComponent<BlockMove>().SpeedChange();
-            }
-            Time.timeScale = 0;
-            //blockMove.SpeedChange();
+            
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -97,9 +102,6 @@ public class BlockManager : MonoBehaviour
             blocksObjlist.Clear();
 
             isTimeStopFlag = false;
-
-            //blockMove.SpeedBack();
-            //blockMove.blockMoveSpeed = 0.01f;
         }
 
     }
