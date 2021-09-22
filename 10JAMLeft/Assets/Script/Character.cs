@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     public bool isGround { get; set; } //地面かどうか
     public bool isJump;    //ジャンプできるか
     public float force; //力
+    public bool isDeadFlag;
     public float vecY;  //↑ベクトル
     Rigidbody rb;
 
@@ -21,8 +22,8 @@ public class Character : MonoBehaviour
     //死亡フラグ
     public bool IsDeadFlag
     {
-        get => IsDeadFlag;
-        set => IsDeadFlag = value;
+        get => isDeadFlag;
+        set => isDeadFlag = value;
     }
 
     // Start is called before the first frame update
@@ -30,7 +31,7 @@ public class Character : MonoBehaviour
     {
         isGround = false;
         rb = GetComponent<Rigidbody>();
-        IsDeadFlag = false;
+        isDeadFlag = false;
         renderer = GetComponent<Renderer>();
 
         switchJamp = true;
@@ -47,7 +48,7 @@ public class Character : MonoBehaviour
         {
             if(transform.position.y <=0)
             {
-                IsDeadFlag = true;
+                isDeadFlag = true;
             }
         }
 
@@ -91,7 +92,7 @@ public class Character : MonoBehaviour
     {
         if (other.gameObject.tag == "Trap")
         {
-            IsDeadFlag = true;
+            isDeadFlag = true;
         }
     }
 
