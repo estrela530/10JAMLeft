@@ -30,10 +30,10 @@ public class MouseDrag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Mathf.Approximately(Time.timeScale,0f))
-        //{
-        //    return;
-        //}
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
 
         //現在のフレームのマウスポジション格納
         currentMousePos = Input.mousePosition;
