@@ -27,6 +27,7 @@ public class Fade : MonoBehaviour
         blue = fadePanelImage.color.b;
         alfa = fadePanelImage.color.a;
         sceneChange = FindObjectOfType<SceneChanger>();
+        player = FindObjectOfType<Character>();
         goal = FindObjectOfType<Goal>();
         isSound = false;
     }
