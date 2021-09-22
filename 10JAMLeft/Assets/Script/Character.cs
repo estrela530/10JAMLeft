@@ -49,6 +49,7 @@ public class Character : MonoBehaviour
             if(transform.position.y <=0)
             {
                 isDeadFlag = true;
+                Destroy(gameObject);
             }
         }
 
