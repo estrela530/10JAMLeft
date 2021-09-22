@@ -9,7 +9,6 @@ public class Character : MonoBehaviour
     public float force; //力
     public float vecY;  //↑ベクトル
     Rigidbody rb;
-    bool isDead;    //死か
 
     public float time = 0;  //入力されてからの経過時間保存用time
     float precedeTime = 0.2f;   //先行入力待機時間
@@ -18,12 +17,20 @@ public class Character : MonoBehaviour
 
     //ジャンプの仕方（見分け用 今のところほぼ変化なし
     public bool switchJamp;
+
+    //死亡フラグ
+    public bool IsDeadFlag
+    {
+        get => IsDeadFlag;
+        set => IsDeadFlag = value;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         isGround = false;
         rb = GetComponent<Rigidbody>();
-        isDead = false;
+        IsDeadFlag = false;
         renderer = GetComponent<Renderer>();
 
         switchJamp = true;
@@ -40,7 +47,7 @@ public class Character : MonoBehaviour
         {
             if(transform.position.y <=0)
             {
-                isDead = true;
+                IsDeadFlag = true;
             }
         }
 
@@ -63,11 +70,6 @@ public class Character : MonoBehaviour
         {
             switchJamp = !switchJamp;
         }
-
-        if (isDead)
-        {
-
-        }
     }
 
     // Update is called once per frame
@@ -89,7 +91,7 @@ public class Character : MonoBehaviour
     {
         if (other.gameObject.tag == "Trap")
         {
-            isDead = true;
+            IsDeadFlag = true;
         }
     }
 
