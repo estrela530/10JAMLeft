@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6612057221527072412}
   - component: {fileID: 8154575193114648087}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\u97F3\u91CF\u8A2D\u5B9A"
 --- !u!1 &7462917384589166725
 GameObject:
   m_ObjectHideFlags: 0
