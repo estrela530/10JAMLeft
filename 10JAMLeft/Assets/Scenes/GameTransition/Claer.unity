@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9054931944676203090, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
+      propertyPath: playBGM
+      value: "\u30B9\u30BF\u30FC\u30EA\u30FC\u30C7\u30A3\u30C3\u30B7\u30E5"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
 --- !u!1 &791848643
@@ -331,7 +335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2112071405
 PrefabInstance:
