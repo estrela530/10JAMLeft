@@ -43,10 +43,21 @@ public class BlockMove : MonoBehaviour
         //    return;
         //}
         //BlockXMove();
-        if(!onClick)
-        transform.Translate(blockMoveSpeed, 0, 0);
-    }
+        if (!onClick)
+            transform.Translate(blockMoveSpeed, 0, 0);
 
+        Destroy(this.gameObject, 10.0f);
+        //if (transform.position.x > 33f)
+        //{
+        //    Debug.Log("しんだ！");
+        //    Destory();
+        //}
+
+        //if (!GetComponent<Renderer>().isVisible)
+        //{
+        //    Destroy(this.gameObject);
+        //}
+    }
     /// <summary>
     ///Block移動用メソッド
     /// </summary>
@@ -82,4 +93,11 @@ public class BlockMove : MonoBehaviour
         blockMoveSpeed = 0.01f;
     }
 
+    /// <summary>
+    /// 画面外に行った時の削除処理
+    /// </summary>
+    public void Destory()
+    {
+        Destroy(this.gameObject,120);
+    }
 }

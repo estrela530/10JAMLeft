@@ -15,6 +15,7 @@ public class BlockManager : MonoBehaviour
     int CreateSpeed;
     BlockMove blockMove;
     float blockSpeed;
+    int BlockCount;
     //¡‚ªŽžŠÔ’âŽ~‚ÌŒø‰Ê‚ªo‚Ä‚¢‚é‚Æ‚«‚©‚ð”»’f‚·‚é
     public bool isTimeStopFlag;
 
@@ -25,6 +26,7 @@ public class BlockManager : MonoBehaviour
     void Start()
     {
         CreateSpeed = 0;
+        BlockCount = 0;
         blockSpeed = -0.01f;
         isTimeStopFlag = false;
     }
@@ -34,7 +36,7 @@ public class BlockManager : MonoBehaviour
     void FixedUpdate()
     {
         CreateSpeed++;
-        if (CreateSpeed > 60)
+        if (CreateSpeed > 120)
         {
             CreateBlock();
             CreateSpeed = 0;
@@ -49,7 +51,7 @@ public class BlockManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Q))
         {
             isTimeStopFlag = true;
 
@@ -72,7 +74,7 @@ public class BlockManager : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Q))
         {
             if (isTimeStopFlag == true)
             {
@@ -101,7 +103,8 @@ public class BlockManager : MonoBehaviour
 
         var parent = this.transform;
         GameObject bObj = Instantiate(blockObject, new Vector3(-12, randomYPosition, 0), Quaternion.identity, parent);
-        bObj.name = "Block" + transform.childCount;
+        bObj.name = "Block" + BlockCount;
+        BlockCount++;
         //blockObject.transform.parent = transform.parent;
     }
 
