@@ -29,6 +29,10 @@ public class BlockManager : MonoBehaviour
         BlockCount = 0;
         blockSpeed = -0.01f;
         isTimeStopFlag = false;
+        CreateBlock();
+        CreateBlock();
+        CreateBlock();
+
     }
 
     // Update is called once per frame
@@ -36,7 +40,9 @@ public class BlockManager : MonoBehaviour
     void FixedUpdate()
     {
         CreateSpeed++;
-        if (CreateSpeed > 360)
+        
+
+        if (CreateSpeed > 240)
         {
             CreateBlock();
             CreateSpeed = 0;
