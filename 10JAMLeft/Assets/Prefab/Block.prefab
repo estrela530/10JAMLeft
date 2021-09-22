@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7473734099373806278}
   - component: {fileID: 2155645340766470934}
   - component: {fileID: 4895994788270303849}
+  - component: {fileID: -8265780771356105849}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -172,3 +173,45 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-8265780771356105849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473734099373806272}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b92c874d28e1b47b80afc07285c5c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClickNow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7473734099373806279}
+        m_TargetAssemblyTypeName: BlockMove, Assembly-CSharp
+        m_MethodName: set_onClick
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnClickExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7473734099373806279}
+        m_TargetAssemblyTypeName: BlockMove, Assembly-CSharp
+        m_MethodName: set_onClick
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
