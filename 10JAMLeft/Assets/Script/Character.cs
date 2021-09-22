@@ -88,7 +88,7 @@ public class Character : MonoBehaviour
                 isGround = false;
                 time = 0;
                 Jump();
-                //SoundManager.Instance.PlaySeByName("Motion-Pop28-1");
+                SoundManager.Instance.PlaySeByName("Motion-Pop28-1");
             }
         }
         rb.velocity = new Vector3(x, rb.velocity.y, 0);
