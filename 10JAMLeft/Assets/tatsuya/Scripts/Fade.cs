@@ -7,7 +7,6 @@ public class Fade : MonoBehaviour
 {
     [SerializeField] private float fadeSpeed = 0.0f;
 
-    public ButtomScript select;
     public string NextChangerSceneName;
     private float red, green, blue, alfa;//パネルの色、透明度
     private Image fadePanelImage;
@@ -16,6 +15,7 @@ public class Fade : MonoBehaviour
     private Character player;
     private Goal goal;
     private bool isLoadScene = false;
+    private ButtomScript select;
 
     private bool isSound;
 
@@ -29,6 +29,7 @@ public class Fade : MonoBehaviour
         sceneChange = FindObjectOfType<SceneChanger>();
         player = FindObjectOfType<Character>();
         goal = FindObjectOfType<Goal>();
+        select = FindObjectOfType<ButtomScript>();
         isSound = false;
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtomScript : MonoBehaviour
 {
-    private bool isPush;
+    [SerializeField]private bool isPush;
 
     public bool IsPush
     {

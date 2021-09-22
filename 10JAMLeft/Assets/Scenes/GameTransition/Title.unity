@@ -545,6 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36b57c0fe2099548a8e5c89c2f9220b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPush: 0
 --- !u!1 &1034860730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,5 +1478,17 @@ PrefabInstance:
       propertyPath: select
       value: 
       objectReference: {fileID: 1013865639}
+    - target: {fileID: 8556300268215976341, guid: 065d1adb0fbeacc47ad2071ddc42b0a6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556300268215976341, guid: 065d1adb0fbeacc47ad2071ddc42b0a6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556300268215976341, guid: 065d1adb0fbeacc47ad2071ddc42b0a6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 065d1adb0fbeacc47ad2071ddc42b0a6, type: 3}
