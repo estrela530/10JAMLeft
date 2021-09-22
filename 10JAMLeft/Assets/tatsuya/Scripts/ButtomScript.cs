@@ -11,6 +11,12 @@ public class ButtomScript : MonoBehaviour
         get => isPush;
         set => isPush = value;
     }
+
+    public void Start()
+    {
+        isPush = false;
+    }
+
     public void OnClick()
     {
         isPush = true;
