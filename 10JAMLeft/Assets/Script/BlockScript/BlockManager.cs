@@ -8,7 +8,6 @@ public class BlockManager : MonoBehaviour
     //取得系------------------------
     [SerializeField]
     GameObject blockObject;
-    //GameObject blockObject = GameObject.FindGameObjectWithTag("Block");
 
     //------------------------------
 
@@ -19,9 +18,7 @@ public class BlockManager : MonoBehaviour
     //今が時間停止の効果が出ているときかを判断する
     public bool isTimeStopFlag;
 
-    //Block用配列
-    GameObject[] blocks;
-    BlockMove[] blockMoves;
+    //Block用List
     List<GameObject> blocksObjlist = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -29,16 +26,7 @@ public class BlockManager : MonoBehaviour
     {
         CreateSpeed = 0;
         blockSpeed = -0.01f;
-        blockMove = blockObject.GetComponent<BlockMove>();
-        //blockMove = transform.GetComponentInChildren<BlockMove>();
-        blocks = new GameObject[20];
-        blockMoves = new BlockMove[20];
         isTimeStopFlag = false;
-
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    blocks[i] = this.transform.GetChild(i).gameObject;            
-        //}
     }
 
     // Update is called once per frame
@@ -61,11 +49,6 @@ public class BlockManager : MonoBehaviour
             return;
         }
 
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    blocks[i] = this.transform.GetChild(i).gameObject;
-        //}
-
         if (Input.GetKey(KeyCode.Space))
         {
             isTimeStopFlag = true;
@@ -85,23 +68,26 @@ public class BlockManager : MonoBehaviour
                 {
                     list.GetComponent<BlockMove>().SpeedChange();
                 }
-                Time.timeScale = 0;
+                TimeStop();
             }
-            
+
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            Time.timeScale = 1;
-            //blocksObjlistの中身のSpeedBack()を全実行
-            foreach (var list in blocksObjlist)
+            if (isTimeStopFlag == true)
             {
-                list.GetComponent<BlockMove>().SpeedBack();
+                //blocksObjlistの中身のSpeedBack()を全実行
+                foreach (var list in blocksObjlist)
+                {
+                    list.GetComponent<BlockMove>().SpeedBack();
+                }
+
+                //blocksObjlistの中身全削除
+                blocksObjlist.Clear();
+
+                TimeStart();
+                isTimeStopFlag = false;
             }
-
-            //blocksObjlistの中身全削除
-            blocksObjlist.Clear();
-
-            isTimeStopFlag = false;
         }
 
     }
@@ -114,7 +100,7 @@ public class BlockManager : MonoBehaviour
         randomYPosition = (float)Random.Range(-4.0f, 4.0f);
 
         var parent = this.transform;
-        GameObject bObj = Instantiate(blockObject, new Vector3(-4, randomYPosition, 0), Quaternion.identity, parent);
+        GameObject bObj = Instantiate(blockObject, new Vector3(-12, randomYPosition, 0), Quaternion.identity, parent);
         bObj.name = "Block" + transform.childCount;
         //blockObject.transform.parent = transform.parent;
     }
@@ -122,11 +108,17 @@ public class BlockManager : MonoBehaviour
     /// <summary>
     /// 時間停止・逆再生
     /// </summary>
-    void GoRight()
+    void TimeStop()
     {
         Time.timeScale = 0;
-        blockMove.blockMoveSpeed = blockSpeed;
-        //blockSpeed = blockMove.blockMoveSpeed;
-        //blockSpeed = -1;
     }
+
+    /// <summary>
+    /// 時間再生
+    /// </summary>
+    void TimeStart()
+    {
+        Time.timeScale = 1;
+    }
+
 }
