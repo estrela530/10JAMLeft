@@ -102,7 +102,7 @@ public class BlockManager : MonoBehaviour
         randomYPosition = (float)Random.Range(-4.0f, 4.0f);
 
         var parent = this.transform;
-        GameObject bObj = Instantiate(blockObject, new Vector3(-12, randomYPosition, 0), Quaternion.identity, parent);
+        GameObject bObj = Instantiate(blockObject, new Vector3(-12, randomYPosition, 90), Quaternion.identity, parent);
         bObj.name = "Block" + BlockCount;
         BlockCount++;
         //blockObject.transform.parent = transform.parent;
