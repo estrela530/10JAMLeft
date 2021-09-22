@@ -19,6 +19,7 @@ public class MouseDrag : MonoBehaviour
 
     public UnityEvent OnClickExit;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,8 +63,14 @@ public class MouseDrag : MonoBehaviour
             OnClickExit.Invoke();
         }
 
-        if (clickedObject)// && gameObject.name == clickGameObject.name)
+        if (clickedObject)
         {
+            if (Camera.main.WorldToViewportPoint(transform.position).x >= 0.45f)
+            {
+                clickedObject = false;
+                OnClickExit.Invoke();
+                return;
+            }
 
             //Blockの座標をワールドからスクリーンに
             objectPoint = Camera.main.WorldToScreenPoint(transform.position);
@@ -78,8 +85,10 @@ public class MouseDrag : MonoBehaviour
             objectPoint = Camera.main.ScreenToWorldPoint(screenPoint);
             //ブロックのポジションに変化を割り当て
             transform.position = objectPoint;
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x,
+                Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x,
+                Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1, 0)).x), transform.position.y, transform.position.z);
         }
-
         //前のフレームのマウスポジション格納
         previousMousePos = Input.mousePosition;
     }
