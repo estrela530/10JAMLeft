@@ -7,13 +7,14 @@ public class Fade : MonoBehaviour
 {
     [SerializeField] private float fadeSpeed = 0.0f;
 
+    public ButtomScript select;
     public string NextChangerSceneName;
     private float red, green, blue, alfa;//パネルの色、透明度
     private Image fadePanelImage;
     private bool isStart = true;
     private SceneChanger sceneChange;
     private Character player;
-    //private Goal goal;
+    private Goal goal;
     private bool isLoadScene = false;
 
     private bool isSound;
@@ -26,53 +27,53 @@ public class Fade : MonoBehaviour
         blue = fadePanelImage.color.b;
         alfa = fadePanelImage.color.a;
         sceneChange = FindObjectOfType<SceneChanger>();
-        //goal = FindObjectOfType<Goal>();
+        goal = FindObjectOfType<Goal>();
         isSound = false;
     }
 
     private void Update()
     {
-        //if (SceneSave.Instance.IsNowScene == "Title")
-        //{
-        //    if ()
-        //    {
-        //        StartFadeOut();
-
-        //        if (isLoadScene)
-        //        {
-        //            sceneChange.ChangeScene("StageSelect");
-        //        }
-        //    }
-        //}
-
-        if (SceneSave.Instance.IsNowScene.Contains("Stage"))
+        if (SceneSave.Instance.IsNowScene == "Title")
         {
-            //if (player.IsDeadFlag)
-            //{
-            //    if (!isSound)
-            //    {
-            //        SoundManager.Instance.PlaySeByName("プレイヤーが死んだとき");
-            //        isSound = true;
-            //    }
-            //    StartFadeOut();
+            if (select.IsPush)
+            {
+                StartFadeOut();
 
-            //    if (isLoadScene)
-            //    {
-            //        SoundManager.Instance.StopSe();
-            //        sceneChange.ChangeScene("GameOver");
-            //    }
-            //}
+                if (isLoadScene)
+                {
+                    sceneChange.ChangeScene("Select");
+                }
+            }
+        }
 
-            //if (goal.IsGoal)
-            //{
-            //    StartFadeOut();
+        if (SceneSave.Instance.IsNowScene.Contains("Game"))
+        {
+            if (player.IsDeadFlag)
+            {
+                if (!isSound)
+                {
+                    SoundManager.Instance.PlaySeByName("プレイヤーが死んだとき");
+                    isSound = true;
+                }
+                StartFadeOut();
 
-            //    if (isLoadScene)
-            //    {
-            //        SoundManager.Instance.StopSe();
-            //        sceneChange.ChangeScene("Clear");
-            //    }
-            //}
+                if (isLoadScene)
+                {
+                    SoundManager.Instance.StopSe();
+                    sceneChange.ChangeScene("Over");
+                }
+            }
+
+            if (goal.IsGoal)
+            {
+                StartFadeOut();
+
+                if (isLoadScene)
+                {
+                    SoundManager.Instance.StopSe();
+                    sceneChange.ChangeScene("Clear");
+                }
+            }
         }
     }
 
