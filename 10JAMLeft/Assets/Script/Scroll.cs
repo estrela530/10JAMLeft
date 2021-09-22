@@ -13,7 +13,7 @@ public class Scroll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(scrollSpeed, 0, 0);
 

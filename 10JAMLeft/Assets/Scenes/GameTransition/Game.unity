@@ -263,7 +263,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395023017}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -397,6 +397,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3343796013305178458, guid: e995c76d84147df499fc7db130f875db, type: 3}
+      propertyPath: m_Name
+      value: SBlock3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343796013305178458, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
@@ -411,6 +415,10 @@ PrefabInstance:
     - target: {fileID: 3343796014186342985, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343796014186342990, guid: e995c76d84147df499fc7db130f875db, type: 3}
+      propertyPath: m_Name
+      value: SBlock4
       objectReference: {fileID: 0}
     - target: {fileID: 3343796014186342990, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Layer
@@ -433,6 +441,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3343796014922915552, guid: e995c76d84147df499fc7db130f875db, type: 3}
+      propertyPath: m_Name
+      value: SBlock1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343796014922915552, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
@@ -443,6 +455,10 @@ PrefabInstance:
     - target: {fileID: 3343796014922915559, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343796015149022314, guid: e995c76d84147df499fc7db130f875db, type: 3}
+      propertyPath: m_Name
+      value: SBlock2
       objectReference: {fileID: 0}
     - target: {fileID: 3343796015149022314, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Layer
@@ -459,6 +475,10 @@ PrefabInstance:
     - target: {fileID: 3343796015211573217, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343796015211573222, guid: e995c76d84147df499fc7db130f875db, type: 3}
+      propertyPath: m_Name
+      value: SBlock6
       objectReference: {fileID: 0}
     - target: {fileID: 3343796015211573222, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Layer
@@ -554,7 +574,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7402996357637458687, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: scrollSpeed
-      value: 0.005
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650995529346455330, guid: e995c76d84147df499fc7db130f875db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8650995529346455335, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Enabled
@@ -684,6 +708,10 @@ PrefabInstance:
     - target: {fileID: 7066132790573007488, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066132790573007490, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7066132790573007503, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: m_LocalPosition.y
@@ -936,7 +964,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037288968}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 25, y: 0, z: 1}

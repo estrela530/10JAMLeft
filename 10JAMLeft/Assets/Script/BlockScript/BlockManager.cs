@@ -36,7 +36,7 @@ public class BlockManager : MonoBehaviour
     void FixedUpdate()
     {
         CreateSpeed++;
-        if (CreateSpeed > 120)
+        if (CreateSpeed > 360)
         {
             CreateBlock();
             CreateSpeed = 0;
