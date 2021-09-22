@@ -722,7 +722,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7066132790573007502, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: speed
-      value: 5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066132790573007502, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: command.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066132790573007502, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: command.Array.data[0]
+      value: t
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066132790573007502, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: command.Array.data[1]
+      value: y
       objectReference: {fileID: 0}
     - target: {fileID: 7066132790573007503, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: m_LocalPosition.x

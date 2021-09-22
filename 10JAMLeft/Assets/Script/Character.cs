@@ -24,6 +24,8 @@ public class Character : MonoBehaviour
     //ジャンプの仕方（見分け用 今のところほぼ変化なし
     public bool switchJamp;
 
+    float x;
+
     //死亡フラグ
     public bool IsDeadFlag
     {
@@ -44,6 +46,7 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+        Command();
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
             return;
@@ -62,6 +65,10 @@ public class Character : MonoBehaviour
                 time = 0;
             }
         }
+        if (Command())
+        {
+            x = Input.GetAxis("Horizontal") * speed;
+        }
 
         ////ジャンプ法切り替え
         //if (Input.GetKeyDown(KeyCode.A))
@@ -73,12 +80,6 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Command())
-        {
-            float x = Input.GetAxis("Horizontal") * speed;
-            rb.AddForce(x, rb.velocity.y, 0);
-        }
-
         if (isJump)
         {
             if (isGround)
@@ -87,9 +88,11 @@ public class Character : MonoBehaviour
                 isGround = false;
                 time = 0;
                 Jump();
-                SoundManager.Instance.PlaySeByName("Motion-Pop28-1");
+                //SoundManager.Instance.PlaySeByName("Motion-Pop28-1");
             }
         }
+        rb.velocity = new Vector3(x, rb.velocity.y, 0);
+        //rb.AddForce(x, rb.velocity.y, 0);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -112,7 +115,7 @@ public class Character : MonoBehaviour
     private void Jump()
     {
         if (switchJamp)     //力を加える
-            rb.AddForce(new Vector3(rb.velocity.x, force, 0));
+            rb.AddForce(new Vector3(0, force, 0));
     }
 
     private bool Command()
