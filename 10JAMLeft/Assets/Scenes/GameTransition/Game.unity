@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 31122951}
   - component: {fileID: 31122950}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: RightCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1300598073
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &31122953
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 1183380083}
   - component: {fileID: 1183380087}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: LeftCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,7 +971,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -542600385
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1183380086
