@@ -43,10 +43,11 @@ public class BlockMove : MonoBehaviour
         //    return;
         //}
         //BlockXMove();
-        if (!onClick)
-            transform.Translate(blockMoveSpeed, 0, 0);
 
-        Destroy(this.gameObject, 10.0f);
+        //↓これを戻せば時間停止でも動く
+        //if (!onClick)
+        //    transform.Translate(blockMoveSpeed, 0, 0);
+
         //if (transform.position.x > 33f)
         //{
         //    Debug.Log("しんだ！");
@@ -58,6 +59,26 @@ public class BlockMove : MonoBehaviour
         //    Destroy(this.gameObject);
         //}
     }
+
+    private void FixedUpdate()
+    {
+        if (!onClick)
+            transform.Translate(blockMoveSpeed, 0, 0);
+
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        // 衝突した相手にBlockDethAreaタグが付いているとき
+        if (other.gameObject.tag == "BlockDethArea")
+        {
+            Destroy(this.gameObject);
+            Debug.Log("しんだ！");
+
+        }
+    }
+
     /// <summary>
     ///Block移動用メソッド
     /// </summary>
@@ -98,6 +119,6 @@ public class BlockMove : MonoBehaviour
     /// </summary>
     public void Destory()
     {
-        Destroy(this.gameObject,120);
+        Destroy(this.gameObject);
     }
 }
