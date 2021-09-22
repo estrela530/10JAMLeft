@@ -34,12 +34,7 @@ public class SceneSave : SingletonMonoBehaviour<SceneSave>
     {
         nowScene = SceneManager.GetActiveScene().name;
 
-        if (nowScene.Contains("Stage"))
-        {
-            beforeScene = nowScene;
-        }
-
-        if (nowScene == "tutorial")
+        if (nowScene.Contains("Game"))
         {
             beforeScene = nowScene;
         }
