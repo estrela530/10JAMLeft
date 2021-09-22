@@ -16,6 +16,11 @@ public class Character : MonoBehaviour
 
     Renderer renderer;
 
+    [SerializeField]
+    private string[] command = new string[] { "a", "p", "e", "x" };
+    private int commandCount = 0;
+    public float speed; //ボール移動用
+
     //ジャンプの仕方（見分け用 今のところほぼ変化なし
     public bool switchJamp;
 
@@ -39,18 +44,9 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        //if(Mathf.Approximately(Time.timeScale,0f))
-        //{
-        //    return;
-        //}
-
-        if (!renderer.isVisible)
+        if (Mathf.Approximately(Time.timeScale, 0f))
         {
-            if(transform.position.y <=0)
-            {
-                isDeadFlag = true;
-                Destroy(gameObject);
-            }
+            return;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -67,16 +63,22 @@ public class Character : MonoBehaviour
             }
         }
 
-        //ジャンプ法切り替え
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            switchJamp = !switchJamp;
-        }
+        ////ジャンプ法切り替え
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    switchJamp = !switchJamp;
+        //}
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Command())
+        {
+            float x = Input.GetAxis("Horizontal") * speed;
+            rb.AddForce(x, rb.velocity.y, 0);
+        }
+
         if (isJump)
         {
             if (isGround)
@@ -85,6 +87,7 @@ public class Character : MonoBehaviour
                 isGround = false;
                 time = 0;
                 Jump();
+                SoundManager.Instance.PlaySeByName("Motion-Pop28-1");
             }
         }
     }
@@ -97,11 +100,32 @@ public class Character : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "VC")
+        {
+            isDeadFlag = true;
+            Debug.Log("死んだ");
+        }
+    }
+
     private void Jump()
     {
         if (switchJamp)     //力を加える
-            rb.AddForce(new Vector3(0, force, 0));
-        else               //Y軸にベクトルを加える
-            rb.velocity = new Vector3(0, vecY, 0);
+            rb.AddForce(new Vector3(rb.velocity.x, force, 0));
+    }
+
+    private bool Command()
+    {
+        if (commandCount < command.Length && Input.GetKeyDown(command[commandCount]))
+        {
+            Debug.Log(command[commandCount]);
+            commandCount++;
+        }
+        if (commandCount >= command.Length)
+        {
+            return true;
+        }
+        return false;
     }
 }
