@@ -14,6 +14,8 @@ public class Character : MonoBehaviour
     public float time = 0;  //入力されてからの経過時間保存用time
     float precedeTime = 0.2f;   //先行入力待機時間
 
+    Renderer renderer;
+
     //ジャンプの仕方（見分け用 今のところほぼ変化なし
     public bool switchJamp;
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class Character : MonoBehaviour
         isGround = false;
         rb = GetComponent<Rigidbody>();
         isDead = false;
+        renderer = GetComponent<Renderer>();
 
         switchJamp = true;
     }
@@ -32,6 +35,14 @@ public class Character : MonoBehaviour
         //{
         //    return;
         //}
+
+        if (!renderer.isVisible)
+        {
+            if(transform.position.y <=0)
+            {
+                isDead = true;
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

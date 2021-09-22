@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
 public class MouseDrag : MonoBehaviour
 {
     Vector3 objectPoint;    //ブロックのポジション変換用
@@ -19,7 +18,6 @@ public class MouseDrag : MonoBehaviour
     public UnityEvent OnClickNow;
 
     public UnityEvent OnClickExit;
-
 
     // Start is called before the first frame update
     void Start()
@@ -49,8 +47,11 @@ public class MouseDrag : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 clickGameObject = hit.collider.gameObject;
-                clickedObject = true;
-                OnClickNow.Invoke();
+                if (gameObject.name == clickGameObject.name)
+                {
+                    clickedObject = true;
+                    OnClickNow.Invoke();
+                }
             }
         }
 
@@ -61,7 +62,7 @@ public class MouseDrag : MonoBehaviour
             OnClickExit.Invoke();
         }
 
-        if (clickedObject && this.gameObject.name == clickGameObject.name)
+        if (clickedObject)// && gameObject.name == clickGameObject.name)
         {
 
             //Blockの座標をワールドからスクリーンに
@@ -77,7 +78,6 @@ public class MouseDrag : MonoBehaviour
             objectPoint = Camera.main.ScreenToWorldPoint(screenPoint);
             //ブロックのポジションに変化を割り当て
             transform.position = objectPoint;
-
         }
 
         //前のフレームのマウスポジション格納

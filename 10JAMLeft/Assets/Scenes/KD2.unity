@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc124825df8a1a4a9e0e305d6c80dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockObject: {fileID: 0}
+  blockObject: {fileID: 1671109824}
   blockMoveSpeed: 0
 --- !u!1001 &7066132791450740069
 PrefabInstance:
@@ -566,6 +566,14 @@ PrefabInstance:
     - target: {fileID: 7066132790517675347, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066132790573007503, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066132790573007503, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
