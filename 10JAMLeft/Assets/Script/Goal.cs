@@ -5,6 +5,12 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
 	public bool goalFlag;
+
+    public bool IsGoal
+    {
+        get => goalFlag;
+        set => goalFlag = value;
+    }
     
 	/// <summary>
 	/// Õ“Ë‚µ‚½Žž
