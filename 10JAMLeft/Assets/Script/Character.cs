@@ -17,7 +17,8 @@ public class Character : MonoBehaviour
     Renderer renderer;
 
     [SerializeField]
-    private string[] command = new string[] { "a", "p", "e", "x" };
+    private string fullCommand = "10daysjam";
+    private List<string> commandnum = new List<string>();
     private int commandCount = 0;
     public float speed; //ƒ{[ƒ‹ˆÚ“®—p
 
@@ -42,6 +43,11 @@ public class Character : MonoBehaviour
         renderer = GetComponent<Renderer>();
 
         switchJamp = true;
+
+        for(int i = 0;i < fullCommand.Length; i++)
+        {
+            commandnum.Add(fullCommand[i].ToString());
+        }
     }
 
     void Update()
@@ -120,15 +126,24 @@ public class Character : MonoBehaviour
 
     private bool Command()
     {
-        if (commandCount < command.Length && Input.GetKeyDown(command[commandCount]))
+        if (commandCount < commandnum.Count && Input.GetKeyDown(commandnum[commandCount]))
         {
-            Debug.Log(command[commandCount]);
+            Debug.Log(commandnum[commandCount]);
             commandCount++;
         }
-        if (commandCount >= command.Length)
+        if (commandCount >= commandnum.Count)
         {
             return true;
         }
+        //if (commandCount < command.Length && Input.GetKeyDown(command[commandCount]))
+        //{
+        //    Debug.Log(command[commandCount]);
+        //    commandCount++;
+        //}
+        //if (commandCount >= command.Length)
+        //{
+        //    return true;
+        //}
         return false;
     }
 }
