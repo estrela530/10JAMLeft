@@ -681,6 +681,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650995529346455331, guid: e995c76d84147df499fc7db130f875db, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8650995529346455335, guid: e995c76d84147df499fc7db130f875db, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -750,6 +754,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7066132790517675344, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7066132790517675347, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -809,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 7066132790573007488, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066132790573007488, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7066132790573007490, guid: 0098b40a71faaf24c86e4f28ee6ab494, type: 3}
       propertyPath: m_IsTrigger

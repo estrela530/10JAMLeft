@@ -42,7 +42,7 @@ public class BlockManager : MonoBehaviour
         CreateSpeed++;
         
 
-        if (CreateSpeed > 240)
+        if (CreateSpeed > 300)
         {
             CreateBlock();
             CreateSpeed = 0;
