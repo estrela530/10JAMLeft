@@ -813,6 +813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9054931944676203090, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
+      propertyPath: playBGM
+      value: "\u5C11\u5E74\u5192\u967A\u8A18"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f506442882122045a1b5f8c7a854218, type: 3}
 --- !u!1 &1335572282

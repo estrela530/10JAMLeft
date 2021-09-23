@@ -5,6 +5,12 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     public bool goalFlag;
+    private SceneChanger changer;
+
+    private void Start()
+    {
+        changer = FindObjectOfType<SceneChanger>();
+    }
 
     public bool IsGoal
     {
@@ -33,6 +39,7 @@ public class Goal : MonoBehaviour
         {
             Debug.Log("ÉNÉäÉAÅI");
             goalFlag = true;
+            changer.ChangeScene("Clear");
             Debug.Log("Flag" + goalFlag);
         }
     }
