@@ -16,14 +16,25 @@ public class Goal : MonoBehaviour
     /// 衝突した時
     /// </summary>
     /// <param name="collision"></param>
-    void OnCollisionEnter(Collision collision)
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    // 衝突した相手にPlayerタグが付いているとき
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        Debug.Log("クリア！");
+    //        goalFlag = true;
+    //        Debug.Log("Flag" + goalFlag);
+    //    }
+    //}
+    void OnTriggerEnter(Collider other)
     {
         // 衝突した相手にPlayerタグが付いているとき
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("クリア！");
             goalFlag = true;
             Debug.Log("Flag" + goalFlag);
         }
     }
+
 }
