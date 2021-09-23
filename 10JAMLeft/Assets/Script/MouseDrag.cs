@@ -61,6 +61,7 @@ public class MouseDrag : MonoBehaviour
         {
             clickedObject = false;
             OnClickExit.Invoke();
+            Cursor.lockState = CursorLockMode.None;
         }
 
         if (clickedObject)
@@ -69,8 +70,11 @@ public class MouseDrag : MonoBehaviour
             {
                 clickedObject = false;
                 OnClickExit.Invoke();
+                Cursor.lockState = CursorLockMode.None;
                 return;
             }
+
+            Cursor.lockState = CursorLockMode.Confined;
 
             //Blockの座標をワールドからスクリーンに
             objectPoint = Camera.main.WorldToScreenPoint(transform.position);
