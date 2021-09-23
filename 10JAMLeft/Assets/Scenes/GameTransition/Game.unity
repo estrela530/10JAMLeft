@@ -1327,6 +1327,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7395311178159750937, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395311178159750937, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 7395311179190233794, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}
       propertyPath: m_Name
       value: LeftCanvas
