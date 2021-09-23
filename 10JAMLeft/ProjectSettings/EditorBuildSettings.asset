@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/GameTransition/Title.unity
     guid: 6d965b3b29ce6f04bb608c82ea45409f
   - enabled: 1
+    path: Assets/Scenes/GameTransition/Select.unity
+    guid: 81ab03e6a331ede4ebb64f36bee46a5f
+  - enabled: 1
     path: Assets/Scenes/GameTransition/Game.unity
     guid: e91cf5c17229db54483090904b7c52ef
   - enabled: 1
     path: Assets/Scenes/GameTransition/Game2.unity
-    guid: aaa955d971745f74bb2d50a673e045fe
+    guid: 72556fb8a4cd3f84399504d77c8ba60f
   - enabled: 1
     path: Assets/Scenes/GameTransition/Game3.unity
     guid: f8e9fdaea47124a43b65b937f7da8453
@@ -26,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameTransition/Claer.unity
     guid: 91a320c798f14ca4da2769e7dbbed2a9
-  - enabled: 1
-    path: Assets/Scenes/GameTransition/Select.unity
-    guid: 81ab03e6a331ede4ebb64f36bee46a5f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
