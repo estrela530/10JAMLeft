@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4407770557071564804, guid: dd29ec31c31789a40822cda2de963afb, type: 3}
+      propertyPath: blockSpeed
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407770557071564804, guid: dd29ec31c31789a40822cda2de963afb, type: 3}
+      propertyPath: blockObject
+      value: 
+      objectReference: {fileID: 1858216258144319906, guid: 878f5ef1099d69345a5f2274e0058e85, type: 3}
     - target: {fileID: 4407770557071564805, guid: dd29ec31c31789a40822cda2de963afb, type: 3}
       propertyPath: m_Name
       value: BlockCreateManager
@@ -582,6 +590,14 @@ PrefabInstance:
       propertyPath: scrollSpeed
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 2066762893363681376, guid: 08d9cf60682f4e64e8cfd0b685c6d50b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066762893363681380, guid: 08d9cf60682f4e64e8cfd0b685c6d50b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3278508572702978468, guid: 08d9cf60682f4e64e8cfd0b685c6d50b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -892,6 +908,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7395311178159750937, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 7395311179190233794, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}
       propertyPath: m_Name
       value: LeftCanvas
@@ -987,6 +1007,10 @@ PrefabInstance:
     - target: {fileID: 7395311179190233798, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395311179304467580, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2adc2188e9f678641ad1c6fba1ee6a9f, type: 3}

@@ -27,7 +27,6 @@ public class BlockMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        blockMoveSpeed = 0.01f;
         blockXPosition = 0;
         //block = blockObject.GetComponent<GameObject>();
         rb = GetComponent<Rigidbody>();

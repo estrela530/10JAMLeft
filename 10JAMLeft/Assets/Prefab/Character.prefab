@@ -43,7 +43,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.6, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7066132789757082366
 MonoBehaviour:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7066132790573007502}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +246,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isJump: 0
   force: 300
+  isDeadFlag: 0
   vecY: 5
   time: 0
+  fullCommand: 10daysjam
+  speed: 2
   switchJamp: 0

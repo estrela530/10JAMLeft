@@ -27,7 +27,6 @@ public class BlockManager : MonoBehaviour
     {
         CreateSpeed = 0;
         BlockCount = 0;
-        blockSpeed = -0.01f;
         isTimeStopFlag = false;
         CreateBlock();
         CreateBlock();
